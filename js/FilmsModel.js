@@ -32,10 +32,13 @@ define('FilmsModel',
             },
             getItem: function(id, callback){
                 var that = this;
+
+                //cache
                 if(that.list[id].extended) {
                     callback.success(that.list[id]);
                     return;
                 }
+
                 $.ajax(config.getFilmsItemUrl(that.list[id].serverId),{
                     dataType: 'json',
                     success: function(data){

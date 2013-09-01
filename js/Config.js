@@ -6,7 +6,7 @@ define('Config',
                 return this.serverUrl+'film1.json';
             },
             getFilmsItemUrl: function(id){
-                return this.serverUrl+'film'+(1+id)+'.json';
+                return this.serverUrl+'film'+(id+1)+'.json';
             }
         };
     }
