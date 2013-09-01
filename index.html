@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        body {
+            padding-top: 70px;
+        }
+    </style>
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <script data-main="js/main.js" src="require.js"></script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand">Project name</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="hero-unit" id="filmsItemWrap">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    </div>
+</div>
+<div class="container">
+    <div>
+        <ul class="nav nav-tabs nav-stacked" id="filmsListWrap"></ul>
+        <div class="clearfix"></div>
+        <hr>
+        <footer>
+            <p>© Company 2013</p>
+        </footer>
+    </div>
+</div>
+<script type="template/mustage" id="filmsListTemplate">
+    {{#films}}
+        <li class="filmsItem" data-id="{{id}}">
+            <a href="#" class="list-group-item">{{name}}<span class="badge pull-right">{{rating}}</span></a>
+        </li>
+    {{/films}}
+</script>
+<script type="template/mustage" id="filmsItemTemplate">
+    {{#film}}
+    <div class="media">
+        <a class="pull-left" href="#">
+            <img class="media-object" src="{{extended.imgUrl}}" alt="">
+        </a>
+        <div class="media-body">
+            <h1>{{name}} ({{year}}) <span class="badge">{{rating}}</span></h1>
+            <p>{{extended.content}}</p>
+        </div>
+    </div>
+    {{/film}}
+</script>
+</body>
+</html>
